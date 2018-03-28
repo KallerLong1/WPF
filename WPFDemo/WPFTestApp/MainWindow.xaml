@@ -1,0 +1,27 @@
+﻿<Window x:Class="WpfTestApp.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:uc="clr-namespace:WpfTestApp"
+        xmlns:local="clr-namespace:WpfTestApp"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="350" Width="525">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="100"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <TreeView x:Name="tv_Activities" MouseMove="TreeView_MouseMove">
+            <TreeViewItem Header="Test1">
+                <TreeViewItem Header="start"/>
+                <TreeViewItem Header="End"/>
+            </TreeViewItem>
+
+        </TreeView>
+        <Canvas Grid.Column="1" x:Name="canvas_backGround" Loaded="canvas_backGround_Loaded" AllowDrop="True" DragDrop.Drop="canvas_backGround_Drap"
+                MouseMove="canvas_backGround_MouseMove" >
+            <uc:OvalRect x:Name="rec" Canvas.Left="10" Canvas.Top="10" MouseDown="rec_MouseDown"/>
+        </Canvas>
+    </Grid>
+</Window>

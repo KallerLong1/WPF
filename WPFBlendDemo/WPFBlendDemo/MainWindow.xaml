@@ -1,0 +1,276 @@
+﻿<Window
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfApp1"
+        xmlns:ed="http://schemas.microsoft.com/expression/2010/drawing" x:Class="WpfApp1.MainWindow"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="350" Width="525" Style="{DynamicResource WindowStyle1}">
+    <Window.Resources>
+        <SolidColorBrush x:Key="Button.MouseOver.Stroke" Color="#FF57BBF5"/>
+        <SolidColorBrush x:Key="Button.Pressed.Stroke" Color="#FFC4E5F6"/>
+        <SolidColorBrush x:Key="Button.Disabled.Stroke" Color="Gray"/>
+        <SolidColorBrush x:Key="Button.Disabled.Fill" Color="LightGray"/>
+        <Style x:Key="ButtonStyle1" TargetType="{x:Type Button}">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type Button}">
+                        <Border x:Name="border" SnapsToDevicePixels="true" Width="36.5" Height="46.5">
+                            <Canvas  Background="Transparent" Margin="2,2,0,0">
+                                <Path x:Name="fillpath" Data="M6,5 L26.125,4.875 35.875,14.875 35.875,44.875 6,45 z" Height="Auto" Stretch="Fill" Stroke="Black" VerticalAlignment="Stretch" StrokeThickness="2.5"/>
+                                <Canvas Height="15.125" Background="Transparent" Canvas.Left="8.125" Canvas.Top="13.499" Width="15.125">
+                                    <Path x:Name="fillpathH" Data="M12.875,24.25 L24.125,24.5" Height="2" Fill="#FFF4F4F5"  Stretch="Fill" Stroke="Black" VerticalAlignment="Stretch" Canvas.Top="7.125" Width="15.125" StrokeThickness="2.5"/>
+                                    <Path x:Name="fillpathV" Data="M12.875,24.25 L24.125,24.5" Height="15.125" Fill="#FFF4F4F5"  Stretch="Fill" Stroke="Black" VerticalAlignment="Stretch" Canvas.Left="6.334" Width="2" StrokeThickness="2.5"/>
+                                </Canvas>
+                            </Canvas>
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="true">
+                                <Setter Property="Stroke" TargetName="fillpath" Value="{StaticResource Button.MouseOver.Stroke}"/>
+                                <Setter Property="Stroke" TargetName="fillpathH" Value="{StaticResource Button.MouseOver.Stroke}"/>
+                                <Setter Property="Stroke" TargetName="fillpathV" Value="{StaticResource Button.MouseOver.Stroke}"/>
+                            </Trigger>
+                            <Trigger Property="IsPressed" Value="true">
+                                <Setter Property="Fill" TargetName="fillpath" Value="{StaticResource Button.Pressed.Stroke}"/>
+                            </Trigger>
+                            <Trigger Property="IsEnabled" Value="false">
+                                <Setter Property="Stroke" TargetName="fillpath" Value="{StaticResource Button.Disabled.Stroke}"/>
+                                <Setter Property="Fill" TargetName="fillpath" Value="{StaticResource Button.Disabled.Fill}"/>
+                                <Setter Property="Stroke" TargetName="fillpathH" Value="{StaticResource Button.Disabled.Stroke}"/>
+                                <Setter Property="Stroke" TargetName="fillpathV" Value="{StaticResource Button.Disabled.Stroke}"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <Style x:Key="ButtonStyle2" TargetType="{x:Type Button}">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type Button}">
+                        <Border x:Name="border" SnapsToDevicePixels="true">
+                            <Canvas Background="Transparent" >
+                                <Path x:Name="OpenfillPath" Data="M23.77701,16.044606 L20.027344,9.7949396 9.1953091,9.9619316 9.1953091,31.961377 9.1953091,33.294019 38.026076,33.794331 44.108608,21.021288 C44.108608,21.021288 44.443647,19.790703 44.443647,19.790703 44.692558,19.79502 44.207735,19.786612 44.207735,19.786612 44.692558,19.79502 15.861459,19.295032 15.861459,19.295032 9.6952701,31.961377 9.8619241,31.46139 9.8619241,31.46139" Margin="0" 
+                                      Stretch="Fill" Stroke="Black" StrokeThickness="2.5" Canvas.Left="0.351" Canvas.Top="9.792" Height="30.499" Width="40.486"/>
+                                <Path x:Name="OpenfillPathH" Data="M22,11 C22,11 39.75,11 39.75,11 39.75,11.313211 39.75,17.25 39.75,17.25 39.28392,17.265848 21,17 21,17" Height="11.463" Canvas.Left="13.24" Stretch="Fill" Stroke="Black" StrokeThickness="2.5" Canvas.Top="12.619" Width="23.403"/>
+                            </Canvas>
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="true">
+                                <Setter Property="Stroke" TargetName="OpenfillPath" Value="{StaticResource Button.MouseOver.Stroke}"/>
+                                <Setter Property="Stroke" TargetName="OpenfillPathH" Value="{StaticResource Button.MouseOver.Stroke}"/>
+                            </Trigger>
+                            <Trigger Property="IsPressed" Value="true">
+                                <Setter Property="Fill" TargetName="OpenfillPath" Value="{StaticResource Button.Pressed.Stroke}"/>
+                                <Setter Property="Fill" TargetName="OpenfillPathH" Value="{StaticResource Button.Pressed.Stroke}"/>
+                            </Trigger>
+                            <Trigger Property="IsEnabled" Value="false">
+                                <Setter Property="Stroke" TargetName="OpenfillPath" Value="{StaticResource Button.Disabled.Stroke}"/>
+                                <Setter Property="Fill" TargetName="OpenfillPath" Value="{StaticResource Button.Disabled.Fill}"/>
+                                <Setter Property="Stroke" TargetName="OpenfillPathH" Value="{StaticResource Button.Disabled.Stroke}"/>
+                                <Setter Property="Fill" TargetName="OpenfillPathH" Value="{StaticResource Button.Disabled.Stroke}"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+        <SolidColorBrush x:Key="Button.Static.Background" Color="#FFDDDDDD"/>
+        <SolidColorBrush x:Key="Button.Static.Border" Color="#FF707070"/>
+        <SolidColorBrush x:Key="Button.MouseOver.Background" Color="#FFBEE6FD"/>
+        <SolidColorBrush x:Key="Button.MouseOver.Border" Color="#FF3C7FB1"/>
+        <SolidColorBrush x:Key="Button.Pressed.Background" Color="#FFC4E5F6"/>
+        <SolidColorBrush x:Key="Button.Pressed.Border" Color="#FF2C628B"/>
+        <SolidColorBrush x:Key="Button.Disabled.Background" Color="#FFF4F4F4"/>
+        <SolidColorBrush x:Key="Button.Disabled.Border" Color="#FFADB2B5"/>
+        <SolidColorBrush x:Key="Button.Disabled.Foreground" Color="#FF838383"/>
+        <Style x:Key="ButtonStyle3" TargetType="{x:Type Button}">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type Button}">
+                        <Border x:Name="border" SnapsToDevicePixels="true">
+                            <Canvas Background="Transparent">
+                                <Path x:Name="saveFillPath" Data="M8.7552197,5 C8.0217764,5 41.011314,5 42.914396,5 42.9709,5 43.002358,5.3777969 43.00352,5.5653635 43.249435,45.25 43,45.25 43,45.25 15.238996,45.25 9.4183083,45.25 8.1978766,45.25 8.1758046,45.25 8.1552373,45.25 8.1360721,45.25 8.1147007,45.25 8.0950727,45.25 8.077046,45.25 8.060924,45.25 8.0460828,45.25 8.0324205,45.25 7.9850607,45.25 7.9518681,45.25&#xD;&#xA;7.9286047,45.25 7.91338,45.25 7.902408,45.25 7.8945008,45.25 7.8870649,45.25 7.8823393,45.25 7.8793362,45.25 7.8769319,45.25 7.8756316,45.25 7.8749284,45.25 7.8741614,45.25 7.9855496,9.6211592 7.9987307,5.4058837 7.9992548,5.2382893 8.7552197,5 8.7552197,5 z" 
+                                        Stretch="Fill" Stroke="Black" StrokeThickness="2.5" VerticalAlignment="Stretch" Canvas.Left="0.571" Canvas.Top="6.677" Height="35.648"/>
+                                <Path x:Name="saveFillPathH" Data="M15.25,5.75 L15.25,19.298968 15.3125,19.375 35.625,19.375 35.75,19.273624 35.75,5.75" Height="13.759" Canvas.Left="8.071" Stretch="Fill" Stroke="Black" StrokeThickness="2.5" Canvas.Top="7.62" Width="23"/>
+                                <Path x:Name="saveFillPathV" Data="M29,7.5 L29,13.750373" Height="7.853" Canvas.Left="21.821" Stretch="Fill" Stroke="Black" StrokeThickness="2.5" Canvas.Top="9.67" Width="2.5"/>
+                            </Canvas>
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="true">
+                                <Setter Property="Stroke" TargetName="saveFillPath" Value="{StaticResource Button.MouseOver.Stroke}"/>
+                                <Setter Property="Stroke" TargetName="saveFillPathH" Value="{StaticResource Button.MouseOver.Stroke}"/>
+                                <Setter Property="Stroke" TargetName="saveFillPathV" Value="{StaticResource Button.MouseOver.Stroke}"/>
+                            </Trigger>
+                            <Trigger Property="IsPressed" Value="true">
+                                <Setter Property="Fill" TargetName="saveFillPath" Value="{StaticResource Button.Pressed.Stroke}"/>
+                            </Trigger>
+                            <Trigger Property="IsEnabled" Value="false">
+                                <Setter Property="Stroke" TargetName="saveFillPath" Value="{StaticResource Button.Disabled.Stroke}"/>
+                                <Setter Property="Fill" TargetName="saveFillPath" Value="{StaticResource Button.Disabled.Fill}"/>
+                                <Setter Property="Stroke" TargetName="saveFillPathH" Value="{StaticResource Button.Disabled.Stroke}"/>
+                                <Setter Property="Stroke" TargetName="saveFillPathV" Value="{StaticResource Button.Disabled.Stroke}"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <Style x:Key="FocusVisual">
+            <Setter Property="Control.Template">
+                <Setter.Value>
+                    <ControlTemplate>
+                        <Rectangle Margin="2" SnapsToDevicePixels="true" Stroke="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}" StrokeThickness="1" StrokeDashArray="1 2"/>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <Style x:Key="ButtonRunStyle" TargetType="{x:Type Button}">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type Button}">
+                        <Border x:Name="border" Background="Transparent" SnapsToDevicePixels="true">
+                            <Path x:Name="runFillPath" Data="M7.5,7.875 L7.5,42.625 39.75,24.875 z" 
+                                  Fill="Black"  Stretch="Fill" Stroke="Black" StrokeThickness="1" Margin="3.25,5.1,0,4.575" HorizontalAlignment="Left" Width="38.2"/>
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="true">
+                                <Setter Property="Stroke" TargetName="runFillPath" Value="{StaticResource Button.MouseOver.Stroke}"/>
+                                <Setter Property="Fill" TargetName="runFillPath" Value="{StaticResource Button.MouseOver.Stroke}"/>
+                            </Trigger>
+                            <Trigger Property="IsPressed" Value="true">
+                                <Setter Property="Stroke" TargetName="runFillPath" Value="{StaticResource Button.Pressed.Stroke}"/>
+                                <Setter Property="Fill" TargetName="runFillPath" Value="{StaticResource Button.Pressed.Stroke}"/>
+                            </Trigger>
+                            <Trigger Property="IsEnabled" Value="false">
+                                <Setter Property="Stroke" TargetName="runFillPath" Value="{StaticResource Button.Disabled.Stroke}"/>
+                                <Setter Property="Fill" TargetName="runFillPath" Value="{StaticResource Button.Disabled.Stroke}"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+        <Style x:Key="ButtonStopStyle" TargetType="{x:Type Button}">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type Button}">
+                        <Border x:Name="border" Background="Transparent" SnapsToDevicePixels="true">
+                            <Path x:Name="stopFillPath" Data="M10,5 C10,5 40,5 40,5 40,35 40,35 40,35 10,35 10,35 10,35 10,5 10,5 10,5 z" 
+                                  Fill="Black" Margin="5"
+                                  Stretch="Fill" Stroke="Black" StrokeThickness="1" />
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="true">
+                                <Setter Property="Stroke" TargetName="stopFillPath" Value="{StaticResource Button.MouseOver.Stroke}"/>
+                                <Setter Property="Fill" TargetName="stopFillPath" Value="{StaticResource Button.MouseOver.Stroke}"/>
+                            </Trigger>
+                            <Trigger Property="IsPressed" Value="true">
+                                <Setter Property="Stroke" TargetName="stopFillPath" Value="{StaticResource Button.Pressed.Stroke}"/>
+                                <Setter Property="Fill" TargetName="stopFillPath" Value="{StaticResource Button.Pressed.Stroke}"/>
+                            </Trigger>
+                            <Trigger Property="IsEnabled" Value="false">
+                                <Setter Property="Stroke" TargetName="stopFillPath" Value="{StaticResource Button.Disabled.Stroke}"/>
+                                <Setter Property="Fill" TargetName="stopFillPath" Value="{StaticResource Button.Disabled.Stroke}"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+        <Style x:Key="ButtonPauseStyle" TargetType="{x:Type Button}">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type Button}">
+                        <Border x:Name="border" Background="Transparent" SnapsToDevicePixels="true">
+                            <Canvas Background="Transparent" >
+                                <Path x:Name="pauseFilePath" Data="M15,10 L15,35" HorizontalAlignment="Left" 
+                                Margin="0" Stretch="Fill" Stroke="Black" 
+                                StrokeThickness="9" Width="auto" Canvas.Left="6.75" Canvas.Top="3.545" Height="40"/>
+                                <Path x:Name="pauseFilePathH" Data="M15,10 L15,35" HorizontalAlignment="Left" 
+                                Margin="0" Stretch="Fill" Stroke="Black" 
+                                StrokeThickness="9" Width="auto" Canvas.Left="24" Canvas.Top="3.545" Height="40"/>
+                            </Canvas>
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="true">
+                                <Setter Property="Stroke" TargetName="pauseFilePath" Value="{StaticResource Button.MouseOver.Stroke}"/>
+                                <Setter Property="Stroke" TargetName="pauseFilePathH" Value="{StaticResource Button.MouseOver.Stroke}"/>
+                            </Trigger>
+                            <Trigger Property="IsPressed" Value="true">
+                                <Setter Property="Stroke" TargetName="pauseFilePath" Value="{StaticResource Button.Pressed.Stroke}"/>
+                                <Setter Property="Stroke" TargetName="pauseFilePathH" Value="{StaticResource Button.Pressed.Stroke}"/>
+                            </Trigger>
+                            <Trigger Property="IsEnabled" Value="false">
+                                <Setter Property="Stroke" TargetName="pauseFilePath" Value="{StaticResource Button.Disabled.Stroke}"/>
+                                <Setter Property="Stroke" TargetName="pauseFilePathH" Value="{StaticResource Button.Disabled.Stroke}"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+        <Style x:Key="TextBoxStyle1" TargetType="{x:Type TextBox}">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type TextBox}">
+                        <Border x:Name="border" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" Background="{TemplateBinding Background}" SnapsToDevicePixels="True">
+                            <ScrollViewer x:Name="PART_ContentHost" Focusable="false" HorizontalScrollBarVisibility="Hidden" VerticalScrollBarVisibility="Hidden"/>
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsEnabled" Value="false">
+                                <Setter Property="Opacity" TargetName="border" Value="0.56"/>
+                            </Trigger>
+                            <Trigger Property="IsMouseOver" Value="true">
+                                <Setter Property="BorderBrush" TargetName="border" Value="{x:Null}"/>
+                            </Trigger>
+                            <Trigger Property="IsKeyboardFocused" Value="true">
+                                <Setter Property="BorderBrush" TargetName="border" Value="{x:Null}"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+            <Style.Triggers>
+                <MultiTrigger>
+                    <MultiTrigger.Conditions>
+                        <Condition Property="IsInactiveSelectionHighlightEnabled" Value="true"/>
+                        <Condition Property="IsSelectionActive" Value="false"/>
+                    </MultiTrigger.Conditions>
+                    <Setter Property="SelectionBrush" Value="{DynamicResource {x:Static SystemColors.InactiveSelectionHighlightBrushKey}}"/>
+                </MultiTrigger>
+                <MultiTrigger>
+                    <MultiTrigger.Conditions>
+                        <Condition Property="Text" Value=""/>
+                        <Condition Property="TextBox.IsFocused" Value="false"/>
+                    </MultiTrigger.Conditions>
+                    <Setter Property="Template">
+                        <Setter.Value>
+                            <ControlTemplate>
+                                <Border>
+                                    <TextBlock x:Name="MainTextBlock"  Text="{TemplateBinding TextBox.Tag}" Width="{TemplateBinding TextBox.ActualWidth}" 
+                                               Foreground="Gray" FontStyle="Italic"  VerticalAlignment="Center" HorizontalAlignment="Left"/>
+                                </Border>
+                            </ControlTemplate>
+                        </Setter.Value>
+                    </Setter>
+                </MultiTrigger>
+            </Style.Triggers>
+        </Style>
+
+
+    </Window.Resources>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Button Click="Button_Click" Content="Get Cursor Position"/>
+        <TextBox Grid.Row="1" x:Name="tb_screen"/>
+    </Grid>
+</Window>
