@@ -5,6 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:uc="clr-namespace:WpfTestApp"
         xmlns:local="clr-namespace:WpfTestApp"
+        xmlns:cu="clr-namespace:UserControls;assembly=UserControls"
         mc:Ignorable="d"
         Title="MainWindow" Height="350" Width="525">
     <Grid>
@@ -22,6 +23,7 @@
         <Canvas Grid.Column="1" x:Name="canvas_backGround" Loaded="canvas_backGround_Loaded" AllowDrop="True" DragDrop.Drop="canvas_backGround_Drap"
                 MouseMove="canvas_backGround_MouseMove" >
             <uc:OvalRect x:Name="rec" Canvas.Left="10" Canvas.Top="10" MouseDown="rec_MouseDown"/>
+            <!--<cu:CustomerButton x:Name="cu" Canvas.Left="100" Canvas.Top="10"  />-->
         </Canvas>
     </Grid>
 </Window>

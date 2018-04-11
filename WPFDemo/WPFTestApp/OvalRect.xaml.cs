@@ -18,7 +18,7 @@ namespace WpfTestApp
     /// <summary>
     /// Interaction logic for OvalRect.xaml
     /// </summary>
-    public partial class OvalRect : Node
+    public partial class OvalRect :UserControl
     {
         public Brush Stroke
         {

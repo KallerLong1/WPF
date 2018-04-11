@@ -1,0 +1,11 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:local="clr-namespace:UserControls">
+    <ControlTemplate x:Key="UButton" TargetType="{x:Type Button}">
+        <Grid>
+            <Rectangle x:Name="rec" RadiusX="10" RadiusY="10" Width="100" Height="50" StrokeThickness="1" Stroke="Black" HorizontalAlignment="Center"
+                   VerticalAlignment="Center" Fill="White"/>
+            <TextBlock Text="Start" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+        </Grid>
+    </ControlTemplate>
+</ResourceDictionary>

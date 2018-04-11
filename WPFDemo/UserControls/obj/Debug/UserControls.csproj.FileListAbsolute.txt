@@ -1,0 +1,14 @@
+D:\MyGit\WPF\WPF\WPFDemo\UserControls\bin\Debug\UserControls.dll
+D:\MyGit\WPF\WPF\WPFDemo\UserControls\bin\Debug\UserControls.pdb
+D:\MyGit\WPF\WPF\WPFDemo\UserControls\obj\Debug\UserControls_MarkupCompile.cache
+D:\MyGit\WPF\WPF\WPFDemo\UserControls\obj\Debug\UserControls_MarkupCompile.lref
+D:\MyGit\WPF\WPF\WPFDemo\UserControls\obj\Debug\Themes\Generic.baml
+D:\MyGit\WPF\WPF\WPFDemo\UserControls\obj\Debug\UserControls.g.resources
+D:\MyGit\WPF\WPF\WPFDemo\UserControls\obj\Debug\UserControls.Properties.Resources.resources
+D:\MyGit\WPF\WPF\WPFDemo\UserControls\obj\Debug\UserControls.csproj.GenerateResource.cache
+D:\MyGit\WPF\WPF\WPFDemo\UserControls\obj\Debug\UserControls.csproj.CoreCompileInputs.cache
+D:\MyGit\WPF\WPF\WPFDemo\UserControls\obj\Debug\UserControls.dll
+D:\MyGit\WPF\WPF\WPFDemo\UserControls\obj\Debug\UserControls.pdb
+D:\MyGit\WPF\WPF\WPFDemo\UserControls\obj\Debug\Themes\UButton.baml
+D:\MyGit\WPF\WPF\WPFDemo\UserControls\obj\Debug\UserControls.csprojResolveAssemblyReference.cache
+D:\MyGit\WPF\WPF\WPFDemo\UserControls\obj\Debug\GeneratedInternalTypeHelper.g.cs
